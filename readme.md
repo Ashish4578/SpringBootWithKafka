@@ -16,7 +16,7 @@ Required Services
 
 ## You can run both ZooKeeper and Kafka using Docker.
 
-1. Start ZooKeeper
+1. Install ZooKeeper using Docker cmd
 ```
    docker run -d \
    --name zookeeper \
@@ -24,7 +24,7 @@ Required Services
    confluentinc/cp-zookeeper:7.5.0 \
    bash -c "echo 'clientPort=2181' > /etc/kafka/zookeeper.properties && zookeeper-server-start /etc/kafka/zookeeper.properties"
 ```
-2. Start Kafka
+2. Install Kafka using Docker cmd
 ```
    docker run -d \
    --name kafka \
