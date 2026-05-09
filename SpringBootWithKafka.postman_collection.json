@@ -1,0 +1,80 @@
+{
+  "info": {
+    "_postman_id": "4e3cc321-cb6d-4946-978c-e299222b4e7c",
+    "name": "SpringBootWithKafka",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54126073",
+    "_collection_link": "https://go.postman.co/collection/54126073-4e3cc321-cb6d-4946-978c-e299222b4e7c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Producer",
+      "item": [
+        {
+          "name": "SendMessage",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/api/kafka/sendMessage?message=ZooKeeper",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "kafka",
+                "sendMessage"
+              ],
+              "query": [
+                {
+                  "key": "message",
+                  "value": "ZooKeeper"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "SendOrder",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"orderId\": \"12887\",\n    \"productName\": \"Phone\",\n    \"quantity\": 1 ,\n    \"price\": 190000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/api/kafka/sendOrder",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "api",
+                "kafka",
+                "sendOrder"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Consumer",
+      "item": []
+    }
+  ]
+}
